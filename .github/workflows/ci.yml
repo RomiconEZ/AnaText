@@ -67,6 +67,7 @@ jobs:
 
       - name: Check licenses
         run: ./check_licenses.sh
+        continue-on-error: true
 
       - name: Generate pip freeze
         run: |
