@@ -3,17 +3,17 @@ import os
 import numpy as np
 import pandas as pd
 
-from eta.src.ApproxClustNum import approximate_n_clusters
-from eta.src.BasicFunc import (
+from .ApproxClustNum import approximate_n_clusters
+from .BasicFunc import (
     detect_language,
     embeddings_for_df,
     preprocess_text,
     read_dataset,
     rename_and_check_columns,
 )
-from eta.src.Classifier import text_classifier, train_classifier
-from eta.src.KeywordDetect import get_top_words_for_clusters
-from eta.src.SCCLBert import (
+from .Classifier import text_classifier, train_classifier
+from .KeywordDetect import get_top_words_for_clusters
+from .SCCLBert import (
     initial_operation,
     recalculate_model,
     reduce_dimension_truncated_svd,

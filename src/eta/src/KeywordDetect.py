@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from keybert.backend import BaseEmbedder
 from stop_words import get_stop_words
-from eta.src.SCCLBert import evaluate_embeddings, text_loader
+from .SCCLBert import evaluate_embeddings, text_loader
 
 
 class CustomEmbedder(BaseEmbedder):

@@ -1,5 +1,5 @@
 from pathlib import Path
-import src.eta as eta
+import eta
 
 
 def test_split_merge_clusters():
