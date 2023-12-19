@@ -36,7 +36,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "False"
 # -----------------------------------------------------------------------------
 
 
-def cluster_documents_with_keywords(filename: str, verbose: bool = False):
+def cluster_documents_with_keywords(filename: str | Path, verbose: bool = False):
     """
     Document clustering with keywords for each cluster
     ...
@@ -72,8 +72,10 @@ def cluster_documents_with_keywords(filename: str, verbose: bool = False):
     """
     try:
         # Check that the file name is a string
-        if not isinstance(filename, str):
-            raise ValueError("filename is None")
+        if not isinstance(filename, (str, Path)):
+            raise ValueError("filename must be a string or a Path object")
+
+        filename = str(filename)
 
         # Loading, pre-processing, calculation of document embeddings
         (

@@ -1,8 +1,11 @@
+from pathlib import Path
+
 import eta
 
 
 def test_split_merge_clusters():
-    filename = "data/processed/20_newsgroup_text_only_50.csv"
+    current_path = Path(__file__).parent
+    filename = current_path / "data" / "processed" / "20_newsgroup_text_only_50.csv"
 
     output_dict = eta.cluster_documents_with_keywords(filename, verbose=True)
 
