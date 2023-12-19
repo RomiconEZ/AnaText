@@ -4,16 +4,8 @@ eta code documentation
 Submodules
 ----------
 
-eta.hello module
+ETA module
 ----------------------------------------------------
-
-.. automodule:: eta.hello
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
 
 .. automodule:: eta
    :members:

@@ -1,4 +1,4 @@
-#!/bin/bash
+x#!/bin/bash
 
 # Force Sphinx to rebuild documentation - otherwise it generates incosistencies.
 rm -rf public/ docs/_build
