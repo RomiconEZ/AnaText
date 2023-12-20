@@ -23,6 +23,7 @@ current_path = Path(__file__).parent
 
 if DEVICE_NAME == "cuda":
     env_path = current_path.parent / "env_files" / "cuda.env"
+
 elif DEVICE_NAME == "mps":
     env_path = current_path.parent / "env_files" / "mps.env"
 else:
