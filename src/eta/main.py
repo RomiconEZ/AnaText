@@ -18,12 +18,14 @@ def cluster_documents_with_keywords(filename: str | Path, verbose: bool = False)
     """
     Document clustering with keywords for each cluster
     ...
+
     Parameters
     ----------
         filename: str
             path to the file
         verbose: bool
             flag for printing
+
     Returns
     -------
         df: pd.DataFrame
@@ -112,6 +114,7 @@ def split_cluster(cluster_num, divisor, data, reduce_model, embeddings):
     """
     Splitting cluster with number {cluster_num} into new clusters in the amount of {divisor}.
     ...
+
     Parameters
     ----------
         cluster_num: int
@@ -123,6 +126,7 @@ def split_cluster(cluster_num, divisor, data, reduce_model, embeddings):
         embeddings: list(list)
         reduce_model
             model for reducing embedding dimensions to 2 for visualization
+
     Returns
     -------
         data: pd.DataFrame
@@ -153,6 +157,7 @@ def union_clusters(cl_list, data, reduce_model, embeddings):
     """
     Splitting cluster with number {cluster_num} into new clusters in the amount of {divisor}.
     ...
+
     Parameters
     ----------
         cl_list: list
@@ -162,6 +167,7 @@ def union_clusters(cl_list, data, reduce_model, embeddings):
         embeddings: list(list)
         reduce_model
             model for reducing embedding dimensions to 2 for visualization
+
     Returns
     -------
         data: pd.DataFrame

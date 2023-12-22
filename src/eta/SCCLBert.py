@@ -165,7 +165,7 @@ def recalculate_model(
     temperature,
     max_iter_1,
     eta,
-):
+    ):
     if device_name != "cuda":
         return data, None, None, None, embeddings
 
@@ -374,8 +374,9 @@ def evaluate_embeddings(
     train_loader,
     max_length,
     device,
-    loader_type="token",
-):
+    loader_type="token"
+    ):
+
     """
     loader type:
             'token' - token loader
@@ -640,7 +641,7 @@ def train(
     max_iter=1000,
     eta=1,
     print_freq=0,
-):
+    train_loader_iter=None,):
     print(f"\n={max_iter}/{len(train_loader)}=Iterations/Batches")
     sumloss = []
     losslist = []

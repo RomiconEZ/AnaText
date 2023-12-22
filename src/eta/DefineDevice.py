@@ -39,3 +39,5 @@ def setup_env(current_path):
     load_dotenv(env_path)
 
     os.environ["TOKENIZERS_PARALLELISM"] = "False"
+
+    return

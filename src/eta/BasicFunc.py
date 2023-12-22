@@ -81,16 +81,16 @@ def split_document(tokens, mask, chunk_size):
     num_of_tokens = tokens.shape[1]
     # Creating a list of token lists of chunk_size length
     for i in range(0, (num_of_tokens // chunk_size) * chunk_size, chunk_size):
-        chunk = tokens[0, i : i + chunk_size]
+        chunk = tokens[0, i: i + chunk_size]
 
         chunks.append(chunk)
 
-        chunk_mask = mask[0, i : i + chunk_size]
+        chunk_mask = mask[0, i: i + chunk_size]
 
         chunks_mask.append(chunk_mask)
     # If the number of tokens in the document is not a multiple of chunk_size
     if num_of_tokens % chunk_size != 0:
-        last_chunk = tokens[0, (num_of_tokens // chunk_size) * chunk_size :]
+        last_chunk = tokens[0, (num_of_tokens // chunk_size) * chunk_size:]
         # Filling the last chunk to chunk_size length
         last_chunk = torch.nn.functional.pad(
             last_chunk,
@@ -100,7 +100,7 @@ def split_document(tokens, mask, chunk_size):
         )
         chunks.append(last_chunk)
         # Creating a mask for the last chunk
-        last_chunk_mask = mask[0, (num_of_tokens // chunk_size) * chunk_size :]
+        last_chunk_mask = mask[0, (num_of_tokens // chunk_size) * chunk_size:]
         last_chunk_mask = torch.nn.functional.pad(
             last_chunk_mask,
             pad=(0, chunk_size - last_chunk_mask.shape[0]),
@@ -183,7 +183,6 @@ def embeddings_for_df(
         # with open(augmenter_file_path, "rb") as file:
         #     sbert = pickle.load(file)
         pass
-
 
     bert = sbert[0].auto_model
     tokenizer = sbert[0].tokenizer

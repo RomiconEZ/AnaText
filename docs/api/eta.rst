@@ -1,8 +1,5 @@
-eta code documentation
+AnaText code documentation
 ==============================================================
-
-Submodules
-----------
 
 ETA module
 ----------------------------------------------------

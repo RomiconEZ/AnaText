@@ -2,10 +2,10 @@
    You can adapt this file completely to your preferences, but it should at least
    contain the root `toctree` directive.
 
-roman - ETA
+AnaText
 ====================================================================================================================
 
-Documentation for `eta` python package.
+Documentation for `AnaText` python package.
 
 
 .. toctree::
