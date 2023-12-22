@@ -44,5 +44,8 @@ Example
 
         return
 
+    if __name__ == '__main__':
+        test_split_merge_clusters()
+
 
 

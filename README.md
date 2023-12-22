@@ -73,3 +73,6 @@ https://romiconez.github.io/AnaText/
         radiuses = output_dict_union["radiuses"]
     
         return
+    
+    if __name__ == '__main__':
+        test_split_merge_clusters()
