@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>eta code documentation &mdash; ETA  documentation</title>
+  <title>AnaText code documentation &mdash; ETA  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="How to..?" href="../howtos.html" />
-    <link rel="prev" title="eta modules" href="modules.html" /> 
+    <link rel="next" title="How to use" href="../howtos.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,9 +47,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../project_overview.html">Project overview</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../code_documentation.html">Code documentation</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="modules.html">eta modules</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">eta code documentation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code_documentation.html#python-package">Установка python package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../code_documentation.html#id1">Импортирование модуля</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">AnaText code documentation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#module-eta">ETA module</a></li>
 </ul>
 </li>
@@ -57,7 +57,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../howtos.html">How to..?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos.html">How to use</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../licenses.html">Licenses</a></li>
 </ul>
 
@@ -76,8 +76,8 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../code_documentation.html">Code documentation</a></li>
-          <li class="breadcrumb-item"><a href="modules.html">eta modules</a></li>
-      <li class="breadcrumb-item active">eta code documentation</li>
+          <li class="breadcrumb-item"><a href="modules.html">&lt;no title&gt;</a></li>
+      <li class="breadcrumb-item active">AnaText code documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api/eta.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,11 +87,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="eta-code-documentation">
-<h1>eta code documentation<a class="headerlink" href="#eta-code-documentation" title="Permalink to this heading"></a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
-</section>
+  <section id="anatext-code-documentation">
+<h1>AnaText code documentation<a class="headerlink" href="#anatext-code-documentation" title="Permalink to this heading"></a></h1>
 <section id="module-eta">
 <span id="eta-module"></span><h2>ETA module<a class="headerlink" href="#module-eta" title="Permalink to this heading"></a></h2>
 <p>eta</p>
@@ -99,14 +96,16 @@
 <dt class="sig sig-object py" id="eta.cluster_documents_with_keywords">
 <span class="sig-name descname"><span class="pre">cluster_documents_with_keywords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.12)"><span class="pre">pathlib.Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eta.cluster_documents_with_keywords" title="Permalink to this definition"></a></dt>
 <dd><p>Document clustering with keywords for each cluster
-…
-:param filename: path to the file
-:type filename: str
-:param verbose: flag for printing
-:type verbose: bool</p>
+…</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><ul class="simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – path to the file</p></li>
+<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – flag for printing</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
 <li><p><strong>df</strong> (<em>pd.DataFrame</em>) – dataframe with columns {text_col}, {emb_col} и {label_col}</p></li>
 <li><p><strong>top_word_dict</strong> (<em>dict</em>) – dictionary with keywords for each cluster</p></li>
 <li><p><strong>data</strong> (<em>pd.DataFrame</em>) – dataframe for internal function operation</p></li>
@@ -121,12 +120,6 @@
 </ul>
 </p>
 </dd>
-<dt class="field-even">Parameters<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.12)"><em>pathlib.Path</em></a>) – </p></li>
-<li><p><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) – </p></li>
-</ul>
-</dd>
 </dl>
 </dd></dl>
 
@@ -134,19 +127,19 @@
 <dt class="sig sig-object py" id="eta.split_cluster">
 <span class="sig-name descname"><span class="pre">split_cluster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">divisor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduce_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embeddings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eta.split_cluster" title="Permalink to this definition"></a></dt>
 <dd><p>Splitting cluster with number {cluster_num} into new clusters in the amount of {divisor}.
-…
-:param cluster_num: number of the cluster
-:type cluster_num: int
-:param divisor: amount of clusters
-:type divisor: int
-:param data: dataframe with columns “current_class”, “embeddings”, “class”
-:type data: pd.DataFrame
-:param embeddings:
-:type embeddings: list(list)
-:param reduce_model: model for reducing embedding dimensions to 2 for visualization</p>
+…</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><ul class="simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cluster_num</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – number of the cluster</p></li>
+<li><p><strong>divisor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – amount of clusters</p></li>
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – dataframe with columns “current_class”, “embeddings”, “class”</p></li>
+<li><p><strong>embeddings</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>)</em>) – </p></li>
+<li><p><strong>reduce_model</strong> – model for reducing embedding dimensions to 2 for visualization</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
 <li><p><strong>data</strong> (<em>pd.DataFrame</em>) – dataframe with columns “current_class”, “embeddings”, “class”, “new_class”, “old_class”</p></li>
 <li><p><strong>cluster_centers_2d</strong> (<em>list(list)</em>) – cluster centers for 2D Visualization</p></li>
 <li><p><strong>radiuses</strong> (<em>dict (cluster_num: float)</em>) – relative radii of clusters for two-dimensional representation</p></li>
@@ -160,17 +153,18 @@
 <dt class="sig sig-object py" id="eta.union_clusters">
 <span class="sig-name descname"><span class="pre">union_clusters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cl_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduce_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embeddings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#eta.union_clusters" title="Permalink to this definition"></a></dt>
 <dd><p>Splitting cluster with number {cluster_num} into new clusters in the amount of {divisor}.
-…
-:param cl_list: list of numbers of clusters to merge
-:type cl_list: list
-:param data: dataframe with columns “current_class”, “embeddings”, “class”
-:type data: pd.DataFrame
-:param embeddings:
-:type embeddings: list(list)
-:param reduce_model: model for reducing embedding dimensions to 2 for visualization</p>
+…</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><ul class="simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cl_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – list of numbers of clusters to merge</p></li>
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – dataframe with columns “current_class”, “embeddings”, “class”</p></li>
+<li><p><strong>embeddings</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a><em>)</em>) – </p></li>
+<li><p><strong>reduce_model</strong> – model for reducing embedding dimensions to 2 for visualization</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
 <li><p><strong>data</strong> (<em>pd.DataFrame</em>) – dataframe with columns “current_class”, “embeddings”, “class”, “new_class”, “old_class”</p></li>
 <li><p><strong>cluster_centers_2d</strong> (<em>list(list)</em>) – cluster centers for 2D Visualization</p></li>
 <li><p><strong>radiuses</strong> (<em>dict (cluster_num: float)</em>) – relative radii of clusters for two-dimensional representation</p></li>
@@ -187,8 +181,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules.html" class="btn btn-neutral float-left" title="eta modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../howtos.html" class="btn btn-neutral float-right" title="How to..?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modules.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../howtos.html" class="btn btn-neutral float-right" title="How to use" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

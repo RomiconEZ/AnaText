@@ -17,13 +17,11 @@
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
-        <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-        <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Code documentation" href="code_documentation.html" />
-    <link rel="prev" title="roman - ETA" href="index.html" /> 
+    <link rel="prev" title="AnaText" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,9 +45,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Project overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ru">RU:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#eng">ENG:</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="code_documentation.html">Code documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="howtos.html">How to..?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtos.html">How to use</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licenses.html">Licenses</a></li>
 </ul>
 
@@ -79,21 +81,41 @@
              
   <section id="project-overview">
 <h1>Project overview<a class="headerlink" href="#project-overview" title="Permalink to this heading"></a></h1>
-<p>This is introduction to the project.</p>
-<p>Write here what this project is about, what problems does it solves on high level.</p>
-<p>You can also use <a class="reference external" href="https://mermaid.js.org/">mermaid</a> - read more on <a class="reference external" href="https://github.com/mgaitan/sphinxcontrib-mermaid">extension page</a>:</p>
-<div class="mermaid">
-              graph TD;
-      eta --&gt; B;
-      eta --&gt; C;
-      B --&gt; D;
-        </div></section>
+<section id="ru">
+<h2>RU:<a class="headerlink" href="#ru" title="Permalink to this heading"></a></h2>
+<p>Аннотация: Программа «AnaText» предназначена для решения задачи разведочного анализа текстов с применением модели Supporting Clustering with Contrastive Learning для кластеризации, подбором гиперпараметров через оптимизацию функционала, выделением ключевых слов для получившихся кластеров, возможность взаимодействия с полученной кластеризацией и построением модели классификации для полученного разбиения.  Обеспечивает эффективный и доступный пользовательский интерфейс, способствующий упрощению процесса анализа данных и интерпретации результатов.</p>
+<p>К преимуществам данной программы (по отношению к известным) относятся:</p>
+<ul class="simple">
+<li><p>Низкий порог входа для начала использования;</p></li>
+<li><p>Обработка любой текстовой информации;</p></li>
+<li><p>Интерактивная работа с данными: пользователь может редактировать кластерную структуру, которая была получена в ходе обработки;</p></li>
+<li><p>Дообучение модели кластеризации по требованию пользователя на основании получившегося разбиения текстов;</p></li>
+<li><p>Отсутствие необходимости ручного подбора параметров для функций кластеризации, подбора ключевых слов и аппроксимации числа кластеров;</p></li>
+<li><p>Инкапсуляция всех этапов загрузки, обработки и постобработки текстовой информации в виде единого интерфейса;</p></li>
+<li><p>Поддержка Metal Performance Shaders backend;</p></li>
+</ul>
+</section>
+<section id="eng">
+<h2>ENG:<a class="headerlink" href="#eng" title="Permalink to this heading"></a></h2>
+<p>Abstract: The AnaText program is designed to solve the problem of exploratory text analysis using the Supporting Clustering with Contrastive Learning model for clustering, selecting hyperparameters through functional optimization, highlighting keywords for the resulting clusters, the ability to interact with the resulting clustering and building a classification model for the resulting partition. Provides an efficient and accessible user interface that simplifies the process of data analysis and interpretation of results.</p>
+<p>The advantages of this program (in relation to the known ones) include:</p>
+<ul class="simple">
+<li><p>Low entry threshold to start using;</p></li>
+<li><p>Processing of any text information;</p></li>
+<li><p>Interactive work with data: the user can edit the cluster structure that was obtained during processing;</p></li>
+<li><p>Additional training of the clustering model at the user’s request based on the resulting text splitting;</p></li>
+<li><p>No need for manual selection of parameters for clustering functions, keyword selection and approximation of the number of clusters;</p></li>
+<li><p>Encapsulation of all stages of loading, processing and postprocessing of textual information in a single interface;</p></li>
+<li><p>Support for Metal Performance Shaders backend;</p></li>
+</ul>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="roman - ETA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="AnaText" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="code_documentation.html" class="btn btn-neutral float-right" title="Code documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

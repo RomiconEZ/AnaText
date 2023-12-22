@@ -1,14 +1,10 @@
 # Code documentation
 
-```{hint}
-
-  To add your code use sphinx tool in project root directory:
-
-    $ sphinx-apidoc -o docs/api/ src/eta
-
-  and add reference from any page which is reachable from the index page.
+## Установка python package
+```bash
+    pip install AnaText
 ```
-
+## Импортирование модуля
 ```python
     import eta
 ```
