@@ -1,7 +1,6 @@
 """ eta """
-
 from .__version__ import __version__
-from .src.main import cluster_documents_with_keywords, split_cluster, union_clusters
+from eta.main import cluster_documents_with_keywords, split_cluster, union_clusters
 
 __all__ = [
     "__version__",

@@ -3,10 +3,10 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from .DefineDevice import define_device
-from .KeywordDetect import get_top_words_for_clusters
-from .OutputPrintFunc import print_pretty_clusters
-from .PipelineFunc import (
+from eta.DefineDevice import define_device
+from eta.KeywordDetect import get_top_words_for_clusters
+from eta.OutputPrintFunc import print_pretty_clusters
+from eta.PipelineFunc import (
     approximate_n_clusters_pipeline,
     clustering_pipeline,
     load_preprocess_embeddings_pipeline,
@@ -22,12 +22,12 @@ DEVICE_NAME = define_device()
 current_path = Path(__file__).parent
 
 if DEVICE_NAME == "cuda":
-    env_path = current_path.parent / "env_files" / "cuda.env"
+    env_path = current_path / "cuda.env"
 
 elif DEVICE_NAME == "mps":
-    env_path = current_path.parent / "env_files" / "mps.env"
+    env_path = current_path / "mps.env"
 else:
-    env_path = current_path.parent / "env_files" / "cpu.env"
+    env_path = current_path / "cpu.env"
 
 load_dotenv(env_path)
 
