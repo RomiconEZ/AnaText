@@ -10,8 +10,8 @@ import torch
 from langdetect import detect
 from sentence_transformers import SentenceTransformer
 
-from eta.KeywordDetect import CustomEmbedder
-from eta.SCCLBert import SCCLBert, evaluate_embeddings, token_loader
+from .KeywordDetect import CustomEmbedder
+from .SCCLBert import SCCLBert, evaluate_embeddings, token_loader
 
 
 def read_dataset(filename: str, verbose: bool = False) -> pd.DataFrame:

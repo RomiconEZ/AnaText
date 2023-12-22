@@ -3,10 +3,10 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from eta.DefineDevice import define_device, setup_env
-from eta.KeywordDetect import get_top_words_for_clusters
-from eta.OutputPrintFunc import print_pretty_clusters
-from eta.PipelineFunc import (
+from .DefineDevice import define_device, setup_env
+from .KeywordDetect import get_top_words_for_clusters
+from .OutputPrintFunc import print_pretty_clusters
+from .PipelineFunc import (
     approximate_n_clusters_pipeline,
     clustering_pipeline,
     load_preprocess_embeddings_pipeline,
