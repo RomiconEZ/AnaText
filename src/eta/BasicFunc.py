@@ -178,10 +178,12 @@ def embeddings_for_df(
     if device_name == "cpu" or device_name == "mps" or pkl_filename_list is None:
         sbert = SentenceTransformer("sentence-transformers/distiluse-base-multilingual-cased-v2")
     else:
-        current_path = Path(__file__).parent
-        augmenter_file_path = current_path.parent / "pkl" / pkl_filename_list[0]
-        with open(augmenter_file_path, "rb") as file:
-            sbert = pickle.load(file)
+        # current_path = Path(__file__).parent
+        # augmenter_file_path = current_path.parent / "pkl" / pkl_filename_list[0]
+        # with open(augmenter_file_path, "rb") as file:
+        #     sbert = pickle.load(file)
+        pass
+
 
     bert = sbert[0].auto_model
     tokenizer = sbert[0].tokenizer

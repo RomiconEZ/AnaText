@@ -3,7 +3,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from eta.DefineDevice import define_device
+from eta.DefineDevice import define_device, setup_env
 from eta.KeywordDetect import get_top_words_for_clusters
 from eta.OutputPrintFunc import print_pretty_clusters
 from eta.PipelineFunc import (
@@ -13,26 +13,6 @@ from eta.PipelineFunc import (
     split_cluster_pipeline,
     union_clusters_pipeline,
 )
-
-# -----------------------------------------------------------------------------
-
-DEVICE_NAME = define_device()
-
-# Get the path to the directory where the current file is located
-current_path = Path(__file__).parent
-
-if DEVICE_NAME == "cuda":
-    env_path = current_path / "cuda.env"
-
-elif DEVICE_NAME == "mps":
-    env_path = current_path / "mps.env"
-else:
-    env_path = current_path / "cpu.env"
-
-load_dotenv(env_path)
-
-os.environ["TOKENIZERS_PARALLELISM"] = "False"
-
 
 # -----------------------------------------------------------------------------
 
@@ -72,6 +52,9 @@ def cluster_documents_with_keywords(filename: str | Path, verbose: bool = False)
             SCCLBert
     """
     try:
+        current_path = Path(__file__).parent
+        setup_env(current_path)
+
         # Check that the file name is a string
         if not isinstance(filename, (str, Path)):
             raise ValueError("filename must be a string or a Path object")
@@ -153,6 +136,9 @@ def split_cluster(cluster_num, divisor, data, reduce_model, embeddings):
             relative radii of clusters for two-dimensional representation
     """
     try:
+        current_path = Path(__file__).parent
+        setup_env(current_path)
+
         data, new_cluster_centers_2d, new_radiuses = split_cluster_pipeline(
             cluster_num, divisor, data, reduce_model, embeddings
         )
@@ -189,6 +175,9 @@ def union_clusters(cl_list, data, reduce_model, embeddings):
             relative radii of clusters for two-dimensional representation
     """
     try:
+        current_path = Path(__file__).parent
+        setup_env(current_path)
+
         data, new_cluster_centers_2d, new_radiuses = union_clusters_pipeline(cl_list, data, reduce_model, embeddings)
         return {
             "data": data,
