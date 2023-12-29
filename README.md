@@ -1,14 +1,14 @@
 # AnaText
-## Описание/Description:
+## Description/Описание:
 ### RU:
 Программа «AnaText» предназначена для
-* решения задачи разведочного анализа текстов с применением модели Supporting Clustering with Contrastive Learning для кластеризации 
+* решения задачи разведочного анализа текстов с применением модели [Supporting Clustering with Contrastive Learning](https://github.com/amazon-science/sccl) для кластеризации 
 * подбора гиперпараметров через оптимизацию функционала 
 * выделения ключевых слов для получившихся кластеров 
 * взаимодействия с полученной кластеризацией
 * построения модели классификации для полученного разбиения  
 
-Обеспечивает эффективный и доступный пользовательский интерфейс, способствующий упрощению процесса анализа данных и интерпретации результатов.
+Предоставляет доступный пользовательский интерфейс, способствующий упрощению процесса анализа данных и интерпретации результатов.
 
 К преимуществам данной программы (по отношению к известным) относятся:
 
@@ -23,13 +23,13 @@
 
 ### ENG:
 The AnaText program is designed for
-* solving the problem of exploratory text analysis using the Supporting Clustering with Contrastive Learning model for clustering
+* solving the problem of exploratory text analysis using the [Supporting Clustering with Contrastive Learning model](https://github.com/amazon-science/sccl) for clustering
 * selection of hyperparameters through optimization of functionality
 * highlighting keywords for the resulting clusters
 * the ability to interact with the resulting clustering
 * building a classification model for the resulting partition
 
-Provides an efficient and accessible user interface that simplifies the process of data analysis and interpretation of results.
+Provides accessible user interface that simplifies the process of data analysis and interpretation of results.
 
 The advantages of this program (in relation to the known ones) include:
 
@@ -44,12 +44,13 @@ The advantages of this program (in relation to the known ones) include:
 ## Documentation/Документация:
 https://romiconez.github.io/AnaText/
 
-## How to use:
+## How to use/Как использовать:
 
 (Data: https://github.com/RomiconEZ/AnaText/blob/main/tests/20_newsgroup_text_only_50.csv)
 
     pip install AnaText
-    --------------------------
+
+    =======================================
 
     from pathlib import Path
     import eta
