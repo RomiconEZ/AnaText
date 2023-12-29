@@ -1,7 +1,14 @@
 # AnaText
 ## Описание/Description:
 ### RU:
-Аннотация: Программа «AnaText» предназначена для решения задачи разведочного анализа текстов с применением модели Supporting Clustering with Contrastive Learning для кластеризации, подбором гиперпараметров через оптимизацию функционала, выделением ключевых слов для получившихся кластеров, возможность взаимодействия с полученной кластеризацией и построением модели классификации для полученного разбиения.  Обеспечивает эффективный и доступный пользовательский интерфейс, способствующий упрощению процесса анализа данных и интерпретации результатов.
+Программа «AnaText» предназначена для
+* решения задачи разведочного анализа текстов с применением модели Supporting Clustering with Contrastive Learning для кластеризации 
+* подбор гиперпараметров через оптимизацию функционала 
+* выделение ключевых слов для получившихся кластеров 
+* возможность взаимодействия с полученной кластеризацией
+* построение модели классификации для полученного разбиения  
+
+Обеспечивает эффективный и доступный пользовательский интерфейс, способствующий упрощению процесса анализа данных и интерпретации результатов.
 
 К преимуществам данной программы (по отношению к известным) относятся:
 
@@ -15,7 +22,14 @@
 
 
 ### ENG:
-Abstract: The AnaText program is designed to solve the problem of exploratory text analysis using the Supporting Clustering with Contrastive Learning model for clustering, selecting hyperparameters through functional optimization, highlighting keywords for the resulting clusters, the ability to interact with the resulting clustering and building a classification model for the resulting partition. Provides an efficient and accessible user interface that simplifies the process of data analysis and interpretation of results.
+The AnaText program is designed for
+* solving the problem of exploratory text analysis using the Supporting Clustering with Contrastive Learning model for clustering
+* selection of hyperparameters through optimization of functionality
+* highlighting keywords for the resulting clusters
+* the ability to interact with the resulting clustering
+* building a classification model for the resulting partition
+
+Provides an efficient and accessible user interface that simplifies the process of data analysis and interpretation of results.
 
 The advantages of this program (in relation to the known ones) include:
 
