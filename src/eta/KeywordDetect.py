@@ -1,4 +1,5 @@
 import itertools
+import re
 from collections import Counter
 from typing import Any, List
 
@@ -6,9 +7,9 @@ import numpy as np
 import pandas as pd
 import spacy
 import spacy.cli
+import spacy.util
 from keybert.backend import BaseEmbedder
 from stop_words import get_stop_words
-import spacy.util
 
 from .SCCLBert import evaluate_embeddings, text_loader
 
@@ -16,6 +17,7 @@ from .SCCLBert import evaluate_embeddings, text_loader
 def normalize_keywords(keywords: List[Any], nlp: Any) -> List[Any]:
     """
     Normalizes keywords by removing those with digits and lemmatizing the rest.
+    Additionally, removes special characters except valid hyphens in words.
 
     Parameters:
         keywords: A list of tuples or a list of lists of tuples, each containing a keyword and its associated float value.
@@ -30,12 +32,19 @@ def normalize_keywords(keywords: List[Any], nlp: Any) -> List[Any]:
         normalized_sublist = []
         for keyword, value in sublist:
             if not any(char.isdigit() for char in keyword):
+                # Remove special characters except valid hyphens
+                cleaned_keyword = re.sub(r"(?<!\w)-|-(?!\w)", " ", keyword)
+                cleaned_keyword = re.sub(r"[^\w\s-]|_", " ", cleaned_keyword)
+                cleaned_keyword = re.sub(r"\s+", " ", cleaned_keyword).strip()
+
                 try:
-                    doc = nlp(keyword)
+                    doc = nlp(cleaned_keyword)
                     lemmatized_keyword = " ".join([token.lemma_ for token in doc])
                 except Exception as e:
-                    lemmatized_keyword = keyword
-                normalized_sublist.append((lemmatized_keyword, value))
+                    lemmatized_keyword = cleaned_keyword
+
+                if lemmatized_keyword:
+                    normalized_sublist.append((lemmatized_keyword, value))
         return normalized_sublist
 
     # Check if the first element is a list (indicating a list of lists) or a tuple (indicating a single list of tuples)
@@ -132,7 +141,7 @@ def get_keywords_by_class(
         # stop_words=stop_words, use_mmr=True, diversity=0.5)
         texts_keywords = model.extract_keywords(
             documents,
-            top_n=5,
+            top_n=6,
             doc_embeddings=doc_embeddings,
             stop_words=stop_words,
             use_maxsum=True,
