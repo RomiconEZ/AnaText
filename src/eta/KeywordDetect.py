@@ -1,5 +1,4 @@
 import itertools
-import logging
 from collections import Counter
 from typing import Any, List
 
@@ -9,6 +8,7 @@ import spacy
 import spacy.cli
 from keybert.backend import BaseEmbedder
 from stop_words import get_stop_words
+import spacy.util
 
 from .SCCLBert import evaluate_embeddings, text_loader
 
@@ -104,23 +104,22 @@ def get_keywords_by_class(
     -------
         keywords_by_class: dict ({{class label}: list of top words })
     """
-    logger = logging.getLogger("spacy")
-    logger.setLevel(logging.ERROR)
 
     if lang == "eng" or lang is None:
-        stop_words = get_stop_words("en")
-        spacy.cli.download("en_core_web_sm")
+        if not spacy.util.is_package("en_core_web_sm"):
+            spacy.cli.download("en_core_web_sm")
         nlp = spacy.load("en_core_web_sm")
+        stop_words = get_stop_words("en")
     elif lang == "ru":
-        stop_words = get_stop_words("ru")
-        spacy.cli.download("ru_core_news_sm")
+        if not spacy.util.is_package("ru_core_news_sm"):
+            spacy.cli.download("ru_core_news_sm")
         nlp = spacy.load("ru_core_news_sm")
+        stop_words = get_stop_words("ru")
     else:
-        stop_words = get_stop_words("en")
-        spacy.cli.download("en_core_web_sm")
+        if not spacy.util.is_package("en_core_web_sm"):
+            spacy.cli.download("en_core_web_sm")
         nlp = spacy.load("en_core_web_sm")
-
-    logger.setLevel(logging.INFO)
+        stop_words = get_stop_words("en")
 
     classes = df[label_col].unique()
     keywords_by_class = {}
