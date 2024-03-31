@@ -1,4 +1,5 @@
 import itertools
+import logging
 from collections import Counter
 from typing import Any, List
 
@@ -103,6 +104,8 @@ def get_keywords_by_class(
     -------
         keywords_by_class: dict ({{class label}: list of top words })
     """
+    logger = logging.getLogger("spacy")
+    logger.setLevel(logging.ERROR)
 
     if lang == "eng" or lang is None:
         stop_words = get_stop_words("en")
@@ -116,6 +119,8 @@ def get_keywords_by_class(
         stop_words = get_stop_words("en")
         spacy.cli.download("en_core_web_sm")
         nlp = spacy.load("en_core_web_sm")
+
+    logger.setLevel(logging.INFO)
 
     classes = df[label_col].unique()
     keywords_by_class = {}
