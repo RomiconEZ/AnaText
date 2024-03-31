@@ -1,10 +1,51 @@
 import itertools
 from collections import Counter
+from typing import Any, List
+
 import numpy as np
 import pandas as pd
+import spacy
+import spacy.cli
 from keybert.backend import BaseEmbedder
 from stop_words import get_stop_words
+
 from .SCCLBert import evaluate_embeddings, text_loader
+
+
+def normalize_keywords(keywords: List[Any], nlp: Any) -> List[Any]:
+    """
+    Normalizes keywords by removing those with digits and lemmatizing the rest.
+
+    Parameters:
+        keywords: A list of tuples or a list of lists of tuples, each containing a keyword and its associated float value.
+        nlp: An NLP tool used for text processing.
+
+    Returns:
+        A list of normalized (keyword, value) tuples or a list of lists of normalized (keyword, value) tuples,
+        depending on the input format.
+    """
+
+    def process_sublist(sublist):
+        normalized_sublist = []
+        for keyword, value in sublist:
+            if not any(char.isdigit() for char in keyword):
+                try:
+                    doc = nlp(keyword)
+                    lemmatized_keyword = " ".join([token.lemma_ for token in doc])
+                except Exception as e:
+                    lemmatized_keyword = keyword
+                normalized_sublist.append((lemmatized_keyword, value))
+        return normalized_sublist
+
+    # Check if the first element is a list (indicating a list of lists) or a tuple (indicating a single list of tuples)
+    if keywords and isinstance(keywords[0], list):
+        # Handle list of lists
+        return [process_sublist(sublist) for sublist in keywords]
+    elif keywords and isinstance(keywords[0], tuple):
+        # Handle single list
+        return process_sublist(keywords)
+    else:
+        return []
 
 
 class CustomEmbedder(BaseEmbedder):
@@ -44,7 +85,7 @@ def get_keywords_by_class(
     label_col: str,
     model,
     lang,
-    no_above=0.6,
+    no_above=0.4,
 ):
     """
     A function for finding the top words for each cluster of texts.
@@ -65,10 +106,16 @@ def get_keywords_by_class(
 
     if lang == "eng" or lang is None:
         stop_words = get_stop_words("en")
+        spacy.cli.download("en_core_web_sm")
+        nlp = spacy.load("en_core_web_sm")
     elif lang == "ru":
         stop_words = get_stop_words("ru")
+        spacy.cli.download("ru_core_news_sm")
+        nlp = spacy.load("ru_core_news_sm")
     else:
         stop_words = get_stop_words("en")
+        spacy.cli.download("en_core_web_sm")
+        nlp = spacy.load("en_core_web_sm")
 
     classes = df[label_col].unique()
     keywords_by_class = {}
@@ -81,12 +128,13 @@ def get_keywords_by_class(
         # stop_words=stop_words, use_mmr=True, diversity=0.5)
         texts_keywords = model.extract_keywords(
             documents,
-            top_n=6,
+            top_n=5,
             doc_embeddings=doc_embeddings,
             stop_words=stop_words,
             use_maxsum=True,
-            nr_candidates=15,
+            nr_candidates=10,
         )
+        texts_keywords = normalize_keywords(texts_keywords, nlp)
         # one document in a class
         if len(documents) == 1:
             top_keywords = [keyword[0] for keyword in texts_keywords]

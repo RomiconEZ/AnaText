@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.abspath('../src'))
 
 project = 'ETA'
 copyright = '2023, Roman Neronov'
-author = 'deepsense.ai'
+author = 'Roman Neronov'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
