@@ -2,19 +2,19 @@
 ## Description/Описание:
 ### RU:
 Программа «AnaText» предназначена для
-* решения задачи разведочного анализа текстов с применением модели [Supporting Clustering with Contrastive Learning](https://github.com/amazon-science/sccl) для кластеризации 
-* подбора гиперпараметров через оптимизацию функционала 
-* выделения ключевых слов для получившихся кластеров 
+* решения задачи разведочного анализа текстов с применением модели [Supporting Clustering with Contrastive Learning](https://github.com/amazon-science/sccl) для кластеризации
+* подбора гиперпараметров через оптимизацию функционала
+* выделения ключевых слов для получившихся кластеров
 * взаимодействия с полученной кластеризацией
-* построения модели классификации для полученного разбиения  
+* построения модели классификации для полученного разбиения
 
 Предоставляет доступный пользовательский интерфейс, способствующий упрощению процесса анализа данных и интерпретации результатов.
 
 К преимуществам данной программы (по отношению к известным) относятся:
 
 * Низкий порог входа для начала использования;
-* Обработка любой текстовой информации; 
-* Интерактивная работа с данными: пользователь может редактировать кластерную структуру, которая была получена в ходе обработки; 
+* Обработка любой текстовой информации;
+* Интерактивная работа с данными: пользователь может редактировать кластерную структуру, которая была получена в ходе обработки;
 * Дообучение модели кластеризации по требованию пользователя на основании получившегося разбиения текстов;
 * Отсутствие необходимости ручного подбора параметров для функций кластеризации, подбора ключевых слов и аппроксимации числа кластеров;
 * Инкапсуляция всех этапов загрузки, обработки и постобработки текстовой информации в виде единого интерфейса;
@@ -44,6 +44,12 @@ The advantages of this program (in relation to the known ones) include:
 ## Documentation/Документация:
 https://romiconez.github.io/AnaText/
 
+## License
+
+This project is licensed under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license. See the LICENSE file for details.
+
+[![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ## How to use/Как использовать:
 
 (Data: https://github.com/RomiconEZ/AnaText/blob/main/tests/20_newsgroup_text_only_50.csv)
@@ -58,9 +64,9 @@ https://romiconez.github.io/AnaText/
     def test_split_merge_clusters():
         current_path = Path(__file__).parent
         filename = current_path / "20_newsgroup_text_only_50.csv"
-    
+
         output_dict = eta.cluster_documents_with_keywords(filename, verbose=True)
-    
+
         df = output_dict["df"]
         top_word_dict = output_dict["top_word_dict"]
         data = output_dict["data"]
@@ -72,22 +78,22 @@ https://romiconez.github.io/AnaText/
         embeddings_1 = output_dict["embeddings"]
         tokenizer = output_dict["tokenizer"]
         model = output_dict["model"]
-    
+
         cl_list = [0, 1]
         cluster_num = 0
         divisor = 2
-    
+
         output_dict_split = eta.split_cluster(cluster_num, divisor, data, reduce_model_1, embeddings_1.to_list())
         data = output_dict_split["data"]
         cluster_centers_2d = output_dict_split["cluster_centers_2d"]
         radiuses = output_dict_split["radiuses"]
-    
+
         output_dict_union = eta.union_clusters(cl_list, data, reduce_model_1, embeddings_1.to_list())
         data = output_dict_union["data"]
         cluster_centers_2d = output_dict_union["cluster_centers_2d"]
         radiuses = output_dict_union["radiuses"]
-    
+
         return
-    
+
     if __name__ == '__main__':
         test_split_merge_clusters()
