@@ -1,8 +1,8 @@
-Project Name: NetLinkAnalyze
+**Project Name**: AnaText
 
-Author: Neronov Roman (GitHub username - RomiconEZ)
+**Author**: Neronov Roman (GitHub username - RomiconEZ)
 
-============================================
+---
 
 # Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 
